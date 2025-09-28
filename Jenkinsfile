@@ -8,6 +8,22 @@ pipeline {
             }
         }
 
+         stage('Docker Login') {
+            steps {
+                script {
+                    // Use withCredentials to securely access Jenkins stored credentials
+                    withCredentials([string(credentialsId: 'docker-hub-credentials', variable: 'DOCKER_PASSWORD'), 
+                                     string(credentialsId: 'docker-hub-username', variable: 'DOCKER_USERNAME')]) {
+                        
+                        // Execute docker login using the variables provided by withCredentials
+                        sh '''
+                        echo "Logging into Docker Hub..."
+                        docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}
+                        '''
+                    }
+                }
+            }
+        }
         
         stage('Build and Push Docker Image'){
            steps{
