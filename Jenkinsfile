@@ -14,7 +14,7 @@ pipeline {
              script{
                 sh '''
                 echo 'Build Docker Image'
-                docker build -t bindu/jenkins-python:latest
+                docker build -t bindu/jenkins-python:latest .
                 '''
              }
            }
