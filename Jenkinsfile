@@ -26,7 +26,7 @@ pipeline {
              script{
                 sh '''
                 echo 'Push to docker repo'
-                docker push -t bindu/jenkins-python:latest
+                docker push bindu/jenkins-python:latest
                 '''
              }
            }
