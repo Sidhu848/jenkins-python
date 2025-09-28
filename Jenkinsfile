@@ -6,8 +6,6 @@ pipeline {
             steps{
                 sh 'echo passed checkout stage'
             }
-
-
         }
 
         
