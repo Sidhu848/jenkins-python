@@ -30,7 +30,7 @@ pipeline {
              script{
                 sh '''
                 echo 'Build Docker Image'
-                docker build -t ${DOCKER_USERNAME}/bindu/jenkins-python:latest .
+                docker build -t bindu039/jenkins-python:latest .
                 '''
              }
            }
@@ -42,7 +42,7 @@ pipeline {
              script{
                 sh '''
                 echo 'Push to docker repo'
-                docker push ${DOCKER_USERNAME}/bindu/jenkins-python:latest
+                docker push bindu039/jenkins-python:latest
                 '''
              }
            }
