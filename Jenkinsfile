@@ -12,7 +12,7 @@ pipeline {
             steps {
                 script {
                     // Use withCredentials to securely access Jenkins stored credentials
-                    withCredentials([string(credentialsId: 'docker-hub-credentials', variable: 'DOCKER_PASSWORD'), 
+                    withCredentials([string(credentialsId: 'docker-hub-password', variable: 'DOCKER_PASSWORD'), 
                                      string(credentialsId: 'docker-hub-username', variable: 'DOCKER_USERNAME')]) {
                         
                         // Execute docker login using the variables provided by withCredentials
