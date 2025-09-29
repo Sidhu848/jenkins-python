@@ -25,29 +25,27 @@ pipeline {
             }
         }
         
-        stage('Build and Push Docker Image'){
+        stage('Build Docker Image'){
            steps{
              script{
                 sh '''
                 echo 'Build Docker Image'
-                docker build -t bindu/jenkins-python:latest .
+                docker build -t ${DOCKER_USERNAME}/bindu/jenkins-python:latest .
                 '''
              }
            }
         }
 
 
-        stage('Push the artifacts'){
+        stage('Push the docker image'){
            steps{
              script{
                 sh '''
                 echo 'Push to docker repo'
-                docker push bindu/jenkins-python:latest
+                docker push ${DOCKER_USERNAME}/bindu/jenkins-python:latest
                 '''
              }
            }
-        }
-
-            
-        }
-    }
+        } 
+     }
+ }
