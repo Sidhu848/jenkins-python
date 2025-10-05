@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: jenkins-python
+spec:
+  containers:
+  - name: todo-app
+    image: jenkins-python:v1
+    ports:
+    - containerPort: 8000
