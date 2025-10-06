@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: todo
-        image: jenkins-python:24
+        image: bindu039/jenkins-python:26
         ports:
         - containerPort: 8000
