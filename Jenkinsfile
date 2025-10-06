@@ -54,7 +54,7 @@ pipeline {
                 GIT_USER_NAME = "Sidhu848"
             }
             steps {
-                withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
+                withCredentials([string(credentialsId: 'jenkins', variable: 'GITHUB_TOKEN')]) {
                 sh """
                  git config user.email "sudarshan.sudeer@gmail.com"
                  git config user.name "Sidhu848"
@@ -62,7 +62,7 @@ pipeline {
                  sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" deploy/deployment.yml
                  git add deploy/deployment.yml
                  git commit -m "Update deployment image to version ${BUILD_NUMBER}"
-                 git push https://${GIT_USER_NAME}:${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
+                 git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
                 """
                 }
             }
