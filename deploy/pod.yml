@@ -5,6 +5,6 @@ metadata:
 spec:
   containers:
   - name: todo-app
-    image: bindu039/jenkins-python:replaceImageTag
+    image: bindu039/jenkins-python:28
     ports:
     - containerPort: 8000
