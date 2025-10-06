@@ -1,12 +1,17 @@
 pipeline {
     agent any
 
+    parameters {
+        string(name: 'CITY', defaultValue: 'Hyderabad', description: 'Enter city name')
+  }
+
     stages{
         stage('Checkout'){
             steps{
                 sh 'echo passed checkout stage'
             }
         }
+
 
          stage('Docker Login') {
             steps {
