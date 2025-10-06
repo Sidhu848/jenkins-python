@@ -60,7 +60,8 @@ pipeline {
                  git config user.name "Sidhu848"
                  BUILD_NUMBER=${BUILD_NUMBER}
                  sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" deploy/deployment.yml
-                 git add deploy/deployment.yml
+                 sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" deploy/pod.yml
+                 git add deploy/deployment.yml deploy/pod.yml
                  git diff --cached --quiet || git commit -m "Update deployment image to version ${BUILD_NUMBER}"              
                  git push https://${GIT_USERNAME}:${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
                  '''
