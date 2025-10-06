@@ -28,5 +28,4 @@ def get_weather(city):
         print("Weather data not available.")
 
 if __name__ == "__main__":
-    city = input("Enter city name: ")
     get_weather("Hyderabad")
