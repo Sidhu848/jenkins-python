@@ -54,7 +54,7 @@ pipeline {
                 GIT_USER_NAME = "Sidhu848"
             }
             steps {
-                withCredentials([usernamePassword(credentialsId: 'github', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_TOKEN')]) {                sh """
+                withCredentials([usernamePassword(credentialsId: 'jenkins', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_TOKEN')]) {                sh """
                  git config user.email "sudarshan.sudeer@gmail.com"
                  git config user.name "Sidhu848"
                  BUILD_NUMBER=${BUILD_NUMBER}
