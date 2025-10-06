@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: todo
-        image: jenkins-python:replaceImageTag
+        image: jenkins-python:24
         ports:
         - containerPort: 8000
