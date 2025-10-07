@@ -4,6 +4,7 @@ import appdynamics.agent
 
 appdynamics.agent.start_from_config_file('appdynamics.cfg')
 
+
 app = Flask(__name__)
 
 @app.route('/weather/<city>')
