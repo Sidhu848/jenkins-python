@@ -1,5 +1,8 @@
 from flask import Flask, jsonify
 import requests
+import appdynamics.agent
+
+appdynamics.agent.start_from_config_file('appdynamics.cfg')
 
 app = Flask(__name__)
 
