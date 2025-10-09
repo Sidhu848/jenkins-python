@@ -11,7 +11,7 @@ COPY appdynamics.cfg /etc/appdynamics.cfg
 
 COPY . .
 
-EXPOSE 5000
+EXPOSE 8000
 
 # CMD ["python", "app.py"]
 CMD ["pyagent", "run", "-c", "/etc/appdynamics.cfg", "--", "python", "app.py"]

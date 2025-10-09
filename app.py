@@ -1,8 +1,11 @@
 from flask import Flask, jsonify
 import requests
 
-
 app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return "Welcome to the Weather API! Use /weather/<city> to get weather information."
 
 @app.route('/weather/<city>')
 def get_weather(city):
@@ -32,4 +35,4 @@ def get_weather(city):
         return jsonify({"error": "Weather data not available"}), 500
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+    app.run(host="0.0.0.0", port=8000)
