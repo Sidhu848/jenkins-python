@@ -6,8 +6,9 @@ spec:
   type: NodePort
   ports:
   - name: http
-    port: 80
-    targetPort: 8080
+    port: 5000
+    targetPort: 5000
     protocol: TCP
+    nodePort: 30050 
   selector:
     app: python
